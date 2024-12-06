@@ -9,4 +9,6 @@ import (
 func RegisterRouters(server *gin.Engine) {
 
 	server.GET("/", func(ctx *gin.Context) {ctx.JSON(http.StatusOK, gin.H{"message": "default page"})})
+
+	server.POST("/create-event", )
 }
