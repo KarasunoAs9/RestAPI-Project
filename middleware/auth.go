@@ -8,8 +8,6 @@ import (
 )
 
 
-
-
 func Authenticate(ctx *gin.Context) {
 	token := ctx.Request.Header.Get("Authorization")
 

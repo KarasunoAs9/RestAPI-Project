@@ -17,9 +17,6 @@ type Event struct {
 	UserID      int64
 }
 
-//var event *Event
-
-
 
 func (e *Event) Save() error {
 	query := `INSERT INTO events (name, description, location, user_id) VALUES ($1, $2, $3, $4) RETURNING id`
@@ -39,7 +36,7 @@ func (e *Event) UpdateEvent(id, userId int64) error {
 	SET name = $1,
 			description = $2,
 			location = $3
-			WHERE id = $4 and user_id $5
+			WHERE id = $4 and user_id = $5;
 	`
 
 	row := db.DB.QueryRow(query, e.Name, e.Description, e.Location, id, userId)
