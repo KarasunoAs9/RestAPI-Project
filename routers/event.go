@@ -34,3 +34,15 @@ func CreateEvent(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusCreated, gin.H{"message": "event was created sucsessfully", "event": event})
 }
+
+func UpdateEvent(ctx * gin.Context) {
+
+}
+
+func DeleteEvent(ctx *gin.Context) {
+
+}
+
+func GetAllEvents(ctx *gin.Context) {
+	
+}

@@ -31,3 +31,15 @@ func (e *Event) Save() error {
 
 	return err
 }
+
+func (e *Event) GetEventById(id int64) error {
+	query := `SELECT * FROM events WHERE id = $1`
+
+	row := db.DB.QueryRow(query, id)
+
+	if row == nil {
+		return fmt.Errorf("no such event")
+	}
+
+	return nil
+}
