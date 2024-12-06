@@ -12,7 +12,8 @@ func InitDB() {
 
 	connection := "host=localhost user=postgres password=1111 dbname=Rest-App sslmode=disable"
 
-	DB, err := sql.Open("postgres", connection)
+	var err error
+	DB, err = sql.Open("postgres", connection)
 
 	if err != nil {
 		log.Fatal("error with connection to database")

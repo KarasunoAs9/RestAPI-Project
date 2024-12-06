@@ -21,7 +21,7 @@ type Event struct {
 
 
 func (e *Event) Save() error {
-	query := `INSERT INTO events (name, description, location, user_id) VALUES $1, $2, $3, $4 RETURNING ID`
+	query := `INSERT INTO events (name, description, location, user_id) VALUES ($1, $2, $3, $4) RETURNING id`
 
 	err := db.DB.QueryRow(query, e.Name, e.Description, e.Location, e.UserID).Scan(&e.ID)
 

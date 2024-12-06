@@ -10,9 +10,10 @@ import (
 
 
 
-var event *models.Event
 
 func CreateEvent(ctx *gin.Context) {
+
+	var event *models.Event
 
 	err := ctx.ShouldBindBodyWithJSON(&event)
 
@@ -26,6 +27,10 @@ func CreateEvent(ctx *gin.Context) {
 
 	event.UserID = userId
 
-	event.Save()
+	if err = event.Save(); err != nil {
+		log.Fatal(userId, err)
+		return
+	}
+
 	ctx.JSON(http.StatusCreated, gin.H{"message": "event was created sucsessfully", "event": event})
 }
