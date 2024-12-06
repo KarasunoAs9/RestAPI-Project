@@ -1,0 +1,8 @@
+POST http://localhost:8080/event/create-event
+content-type: application/json
+
+{
+    "Name": "Maks",
+    "Description": "basket",
+    "Location": "usa",
+}

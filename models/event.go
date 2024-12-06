@@ -9,11 +9,11 @@ import (
 
 
 type Event struct {
-	ID          int
+	ID          int64
 	Name        string `binding:"required"`
 	Description string `binding:"required"`
 	Location    string `binding:"required"`
-	UserID      int
+	UserID      int64
 }
 
 //var event *Event
