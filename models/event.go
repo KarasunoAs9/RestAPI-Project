@@ -61,14 +61,26 @@ func (e *Event) DeleteEvent(id, userId int64) error {
 	return nil
 }
 
-func (e *Event) GetEventById(id int64) error {
-	query := `SELECT * FROM events WHERE id = $1`
+func GetAllEvent(userId int64) ([]*Event, error) {
+	
+	var events []*Event
+	query := `SELECT * FROM events WHERE user_id = $1`
 
-	row := db.DB.QueryRow(query, id)
+	rows, err := db.DB.Query(query, userId)
 
-	if row == nil {
-		return fmt.Errorf("no such event")
+	if err != nil {
+		return nil, fmt.Errorf("error with select events: %v", err)
 	}
 
-	return nil
+	for rows.Next() {
+		var event Event
+		if err := rows.Scan(&event.ID, &event.Name, &event.Description, &event.Location, &event.UserID); err != nil {
+			return nil, fmt.Errorf("error with scan data: %v", err)
+		}
+		events = append(events, &event)
+	}
+
+	defer rows.Close()
+
+	return events, nil
 }

@@ -1,0 +1,3 @@
+GET http://localhost:8080/event/all-events
+content-type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzM1MTA2ODcsInVzZXJJZCI6MiwidXNlcm5hbWUiOiJsb2wifQ.XaAvkioVXpIeAD6VirqKkf-sL1b64ijB5nzempcpRZs

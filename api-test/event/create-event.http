@@ -1,9 +1,9 @@
 POST http://localhost:8080/event/create-event
 content-type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzM1MDQzMzIsInVzZXJJZCI6MiwidXNlcm5hbWUiOiJsb2wifQ.874J_Ak0c_dgygpPAijdr3v7ovc-EUxEXq-qIWaRJdQ
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzM1MTA2ODcsInVzZXJJZCI6MiwidXNlcm5hbWUiOiJsb2wifQ.XaAvkioVXpIeAD6VirqKkf-sL1b64ijB5nzempcpRZs 
 
 {
-    "Name": "Maks",
-    "Description": "basket",
-    "Location": "usa"
+    "Name": "las",
+    "Description": "mas",
+    "Location": "ras"
 }

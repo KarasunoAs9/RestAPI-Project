@@ -85,5 +85,16 @@ func deleteEvent(ctx *gin.Context) {
 }
 
 func getAllEvents(ctx *gin.Context) {
+	userId := ctx.GetInt64("userId")
+
+	events, err := models.GetAllEvent(userId)
+	
+	if err != nil {
+		log.Fatal(err)
+		ctx.JSON(http.StatusBadRequest, gin.H{"message": "error with get events"})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, gin.H{"events": events})
 
 }
