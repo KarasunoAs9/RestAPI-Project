@@ -13,5 +13,5 @@ func RegisterRouters(server *gin.Engine) {
 	server.POST("/login", loginUser)
 	server.PUT("/event/update/:id", middleware.Authenticate, updateEvent)
 	server.DELETE("/event/delete/:id", middleware.Authenticate, deleteEvent)
-
+	
 }
